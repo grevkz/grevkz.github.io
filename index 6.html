@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Передачи в СИЗО / ИВС</title>
+<style>
+        body { background-color: #1e1e1e; color: #ffffff; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #1e1e1e;
+            color: #333;
+        }
+        header {
+            background-color: #2c2c2c;
+            color: #ffffff;
+            padding: 2rem;
+            text-align: center;
+        }
+        section {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+        }
+        h2 {
+            color: #a4ff4f;
+        }
+        .steps, .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+        .step, .benefit {
+            background: #3a3a3a;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        form {
+            background: #3a3a3a;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #2c2c2c;
+            color: #ffffff;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #1b5e20;
+        }
+        footer {
+            background-color: #2c2c2c;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem;
+        }
+        @media (max-width: 600px) {
+            header, section {
+                padding: 1rem;
+            }
+        }
+    
+body { color: #ffffff; }</style>
+</head>
+<body>
+<header>
+<h1>Доставка в СИЗО и ИВС</h1>
+<p>Собираем, упаковываем и доставляем с гарантией вручения</p>
+</header>
+<section>
+<h2>Как это работает</h2>
+<div class="steps">
+<div class="step">1. Вы оставляете заявку</div>
+<div class="step">2. Мы собираем и упаковываем передачу</div>
+<div class="step">3. Доставляем в СИЗО / ИВС</div>
+<div class="step">4. Сообщаем вам результат</div>
+</div>
+</section>
+<section>
+<h2>Что можно передать</h2>
+<ul>
+<li>Продукты питания</li>
+<li>Гигиенические средства</li>
+<li>Одежду</li>
+<li>Лекарства</li>
+<li>Документы</li>
+</ul>
+<p><strong style="color: #a4ff4f;">⚠ Все передачи оформляются в соответствии с требованиями учреждения.</strong></p>
+</section>
+<section>
+<h2>Наши преимущества</h2>
+<div class="benefits">
+<div class="benefit">🕒 Оперативная доставка</div>
+<div class="benefit">📍 Работаем по региону</div>
+<div class="benefit">✅ Гарантия вручения</div>
+<div class="benefit">💬 Связь с клиентом</div>
+<div class="benefit">🔒 Конфиденциальность</div>
+</div>
+</section>
+<section>
+<h2>Оставить заявку</h2>
+<form onsubmit="sendToWhatsApp(); return false;">
+<input id="name" placeholder="Ваше имя" required="" type="text"/>
+<input id="phone" placeholder="Телефон" required="" type="tel"/>
+<textarea id="comment" placeholder="Комментарий (что передать?)" required=""></textarea>
+<button type="submit">Отправить в WhatsApp</button>
+</form>
+</section>
+<footer>
+        © 2025 Сервис доставки в СИЗО и ИВС
+    </footer>
+<script>
+        function sendToWhatsApp() {
+            const name = document.getElementById("name").value;
+            const phone = document.getElementById("phone").value;
+            const comment = document.getElementById("comment").value;
+
+            const message = `Здравствуйте! Хочу оформить передачу.\nИмя: ${name}\nТелефон: ${phone}\nКомментарий: ${comment}`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappNumber = "77057776567"; // Заменить на твой номер в формате 77XXXXXXXXX
+
+            const url = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            window.open(url, "_blank");
+        }
+    </script>
+</body>
+</html>
